@@ -1,7 +1,9 @@
-from sqlalchemy import Column, String, Integer, ForeignKey, Date
+from sqlalchemy import Column, String, Integer, ForeignKey, DateTime
 from sqlalchemy.orm import relationship, backref
 
 from database import Base
+
+from datetime import datetime
 
 ADMINROLE = 0
 TRANSCRIBERROLE = 1
@@ -37,9 +39,10 @@ class Transcription(Base):
   id = Column(Integer, primary_key=True)
   from_id = Column(Integer)
   text = Column(String)
-  date_harvested = Column(Date)
+  date_harvested = Column(DateTime)
+  created_at = Column(DateTime)
   by_user_id = Column(Integer, ForeignKey('users.id'))
-  by_user = relationship(User, backref=backref('editor', uselist=False))
+  by_user = relationship(User, backref=backref('editor', uselist=True))
   # TODO: Add citation metadata columns
 
   def __init__(self, from_id=None, text=None, date_harvested=None, by_user = None):
@@ -47,30 +50,61 @@ class Transcription(Base):
     self.text = text
     self.date_harvested = date_harvested
     self.by_user = by_user
+    self.by_user_id = by_user.id
+    self.created_at = datetime.now()
 
   def __repr__(self):
-    return '<Transcription: {0} -- "{1}..." by {2}>'.format(self.id, self.text[:15], self.created_by)
+    return '<Transcription: {0} -- "{1}..." by {2}>'.format(self.id, self.text[:15], self.by_user)
 
 class Joke(Base):
   __tablename__ = 'jokes'
   id = Column(Integer, primary_key=True)
   from_transcription_id = Column(Integer, ForeignKey('transcriptions.id'))
-  from_transcription = relationship(Transcription, backref=backref('transcriptions', uselist=False))
+  from_transcription = relationship(Transcription, backref=backref('transcription_src', uselist=False))
   transcription_position = Column(Integer)
   text = Column(String)
-  published_at = Column(Date)
-  tumblr_id = Column(String(30))
-  tweet_id = Column(String(30))
-  published_by_id = Column(Integer, ForeignKey('users.id'))
-  published_by = relationship(User, backref=backref('published', uselist=False))
+  #image_id = Column(Integer, ForeignKey('pictures.id'))
+  #image = relationship(Picture, backref=backref('images', uselist=False))
+  created_at = Column(DateTime, nullable=False)
   
   def __init__(self, transcription = None, transcription_position = None, text = None, \
                published_at = None, tumblr_id = None, tweet_id = None, published_by = None):
-   self.from_transcription = transcription
-   self.transcription_position = transcription_position
-   self.text = text 
-   self.published_at = published_at
-   self.tumblr_id = tumblr_id
-   self.tweet_id = tweet_id
-   self.published_by = published_by 
+    self.from_transcription = transcription
+    self.transcription_position = transcription_position
+    self.text = text 
+    self.created_at = datetime.now()
+
+  def __repr__(self):
+    return '<Joke: {0} -- "{1}..." by "{2}">'.format(self.id, self.text[:15], self.published_by)
+
+class Picture(Base):
+  __tablename__ = 'pictures'
+  id = Column(Integer, primary_key = True)
+  created_at = Column(DateTime, nullable=False)
+  rendered_at = Column(DateTime, nullable=False)
+  status = Column(Integer)    # 0 - in progress/queued, 1 - ready to view, 2 - uploaded remotely
+  path = Column(String(50))
+  tumblr_id = Column(String(30))
+  tweet_id = Column(String(30))
+  profile = Column(String(20))
+  joke_id = Column(Integer, ForeignKey('jokes.id'))
+  joke = relationship(Joke, backref=backref('renderings'))
+  published_at = Column(DateTime)
+  published_by_id = Column(Integer, ForeignKey('users.id'))
+  published_by = relationship(User, backref=backref('published', uselist=True))
+  
+  def __init__(self, status, joke, \
+               tumblr_id = None, tweet_id = None, published_by = None, published_at = None):
+    self.status = status
+    self.joke = joke
+    self.tumblr_id = tumblr_id
+    self.tweet_id = tweet_id
+    self.joke_id = joke.id
+    self.created_at = datetime.now()
+    self.published_at = published_at
+    self.published_by = published_by 
+    self.published_by_id = published_by_id
+  
+  def __repr__(self):
+    return '<Picture: {0}, status:{1} -- from joke id {2}>'.format(self.id, self.status, self.joke_id)
 

@@ -2,7 +2,6 @@ import unittest
 
 from models import *
 
-
 # User, Transcription, Joke, Picture
 
 class TestUserClass(unittest.TestCase):
