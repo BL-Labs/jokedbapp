@@ -1,1 +1,1 @@
-python-dev libsqlite3-dev sqlite3 build-essential python-pip
+python-dev libsqlite3-dev sqlite3 build-essential python-pip # python-lxml
