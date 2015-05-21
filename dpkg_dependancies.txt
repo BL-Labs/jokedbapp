@@ -1,1 +1,2 @@
 python-dev libsqlite3-dev sqlite3 build-essential python-pip python-cairo python-cairo-dev
+libapache2-mod-wsgi
