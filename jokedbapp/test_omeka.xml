@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item xmlns="http://omeka.org/schemas/omeka-xml/v5" itemId="33" public="1" featured="0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://omeka.org/schemas/omeka-xml/v5 http://omeka.org/schemas/omeka-xml/v5/omeka-xml-5-0.xsd" uri="http://victorianhumour.com/o/items/show/33?output=omeka-xml" accessDate="2015-03-17T18:16:24+00:00">
+  <fileContainer>
+    <file fileId="5">
+      <src>http://victorianhumour.com/o/files/original/2e4010da787d9c811ce60eba7421bcce.jpg</src>
+      <authentication>6125dfc490ae1daab1fb321faccc69f5</authentication>
+      <elementSetContainer>
+        <elementSet elementSetId="4">
+          <name>Scripto</name>
+          <description/>
+          <elementContainer>
+            <element elementId="52">
+              <name>Transcription</name>
+              <description>A written representation of a document.</description>
+              <elementTextContainer>
+                <elementText elementTextId="564">
+                  <text>&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt; THE COUNTRY HOUSE. &amp;lt;/t&amp;gt;
+- (What our architect has to put up with.) - Fair Client: I want it to be nice and baronial, Queen Anne and Elizabethan, and all that; kind of quaint and Nurembergy, you know - regular old English, with French windows opening to the lawn, and venetian blinds, and sort of Swiss balconies, and a loggia. But I'm sure *you* know what I mean!
+&amp;lt;a&amp;gt; Punch. &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;OLD AND CRUSTY. &amp;lt;/t&amp;gt;
+- Fussy old Director: Lemme see, porter-er-how do the Brighton trains run this month? - Crusty Old Porter (snappily): On wheels. [Sacked.]
+&amp;lt;a&amp;gt; Judy. &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt; AGREED. &amp;lt;/t&amp;gt;
+The Tailor (with great firmness): I tell you, captain, unless you pay that bill at once I must put it into other hands. - Captain Hardup (grasping his hand with fervour): My dear friend, I'm eternally obliged to you! I don't care whose hands you put it into so long as you take it out of mine.
+&amp;lt;a&amp;gt; Moonshine &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt; POMPOUS &amp;lt;/t&amp;gt;
+POMPOUS Husband (whose wife has just stolen up and kissed him): Madam, I consider your conduct most indecorous. - She: I'm so sorry, but I didn't know it was you.
+&amp;lt;a&amp;gt; Ariel. &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt; OVER ON BUSINESS. &amp;lt;/t&amp;gt;
+Jones: I always make a point of telling my wife everything that happens. - Brown: My dear fellow, I tell my wife lots of things that never happen.
+&amp;lt;a&amp;gt; Ariel. &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt; [Untitled] &amp;lt;/t&amp;gt;
+"There's no place like home", says the song. We all know that; but unfortunately we never appreciate it until the time comes when we haven't got one.
+&amp;lt;a&amp;gt; Judy. &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt; AN AMBIGUOUS ASSURANCE &amp;lt;/t&amp;gt;
+Mature but Moneyed Young Lady: I know that from the way the fellows do crowd around me you'd think I was a flirt. But I assure you it's not my fault. - Immature but Impecunious Young Lady: No, dear, it's your fortune.
+&amp;lt;a&amp;gt; Ariel &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt;
+Judge: Gentlemen of the jury, have you agreed upon your verdict? - The Jury: Yes, sor; we've had a stiff fight over it, but we're all o' one moind now.
+&amp;lt;a&amp;gt;Fun.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;A 'STOCK' ACTOR.&amp;lt;/t&amp;gt; - Manager (to old actor): No; I'm afraid we've nothing in your way. Old Actor: But, my dear sir, do you know what is my way? I go from Shakespeare to a monkey on a tight rope, and that's a pretty long range, I should think.
+&amp;lt;a&amp;gt;Fun.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;"AND A GOOD JUDGE, TOO".&amp;lt;/t&amp;gt; - Amateur Composer (to musical justice of the peace): Er - by the bye, have you ever tried one of my songs? - Musical J.P. (significantly): No - but I'd like to.
+&amp;lt;a&amp;gt;Funny Folks.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;A CHECK.&amp;lt;/a&amp;gt; - Huntsman: Seen the fox, my boy? - Boy: No, I ain't! - Huntsman: Then, what are you hollarin' for? - Boy (who has been scaring rooks): 'Cos I'm paid for it!
+&amp;lt;a&amp;gt;Punch.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;"O'SHEA-MEFUL&amp;lt;/t&amp;gt;
+Alas! That one in whom poor Erin placed
+&lt;/p&gt;&lt;p&gt;Full faith and credit, she at last discovers
+&lt;/p&gt;&lt;p&gt;To be continued, deservedly disgraced,
+&lt;/p&gt;&lt;p&gt;Basest of friends, and paltriest of lovers.
+&lt;/p&gt;&lt;p&gt;Whether Erin's cause may suffer, who can tell.
+&lt;/p&gt;&lt;p&gt;But he, at least, has rung his own (Par)knell!"
+&lt;/p&gt;&lt;p&gt;&amp;lt;a&amp;gt;Fun.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;THAT APPLE AGAIN.&amp;lt;/t&amp;gt; - Jack: Look here, Winny!- an apple weighing thirty-two ounces. - Winny: Dear me! It must have been the dying effort of the tree.
+&amp;lt;a&amp;gt;Judy&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt; Can Messrs. Dillon and O'Brien by arrested in Canada? We hope not; surely there is no such hurry as that to get them home again.
+&amp;lt;a&amp;gt;Moonshine.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt; At Hatfield last week policemen and burglars, armed with revolvers, three to three, fired at one another for quite a long time. At last one of the policemen got his finger hurt. Then the three burglars went away - honour was satisfied.
+&amp;lt;a&amp;gt;Moonshine&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;SPRINGING A 'MINE'.&amp;lt;/t&amp;gt; - Lord Lackland: Miss Vandenboom, I love you. Say you will be mine. - Miss Vandenboom (American millionairess): Well, my lord, I reckon I can never be any man's; but you can be mine, if you like.
+&amp;lt;a&amp;gt;Funny Folks&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt; Boulanger is going to start a paper, and be his own editor. &lt;i&gt;Aut scissors aut nullus!&lt;/i&gt; Disaster has not quenched his aspirations.
+&amp;lt;a&amp;gt;Moonshine&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt; I don't know what it is, Mark, but I can't hit a bird to-day. - Let me see your gun, sir. Ah! - well, I'd try what you could do with some cartridges in it, if I was you, sir.
+&amp;lt;a&amp;gt;Punch.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;SHORTLY TO APPEAR.&amp;lt;/t&amp;gt; - Companion volume to "Oceana." New work, by C. S. P-rn-ll, entitled, "O'Sheana."
+&amp;lt;a&amp;gt;Punch. &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt; Mr. Stanley and his Troup have been giving daily performances to large audiences.
+&amp;lt;a&amp;gt;Punch&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;PRESSING.&amp;lt;/t&amp;gt; - Mr. Truelove: Now I'll go. I'm afraid I've taken up too much your time already. - Lady Novelist: I'm so glad to have seen you. I'm busy now with the opening chapters of my next three-volume novel. You must come again when I've finished it.
+&amp;lt;a&amp;gt;Judy&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt; "Bark," a colour resembling the sails of fishing boats, is the fashionable tint for autumn. With a favourable breeze no doubt the bark will have a good sail.
+&amp;lt;a&amp;gt;Moonshine&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;Why Mr. Parnell Will "Go" If He Does "Go."&amp;lt;/t&amp;gt; - For "divorce" reasons, to be sure.
+&amp;lt;a&amp;gt;Funny Folks&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;ALL RIGHT NOW.&amp;lt;/t&amp;gt; - Well, how is your little boy, mrs. Wiggles? - Oh, much better now, mum. I took him to the doctor, who said it was only a rash broke out all over his body, and he gave him some medicine to putrify his blood.
+&amp;lt;a&amp;gt;Judy&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;A ROUNDABOUT ROLE.&amp;lt;/t&amp;gt; - A rigmarole. 
+&amp;lt;a&amp;gt;Funny Folks&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;RUS IN URBE.&amp;lt;/t&amp;gt; Old Lady (from the country, as train is nearing Cannon-street): It is wonderful 'ow they knows which line to go on; 'an all so much alike. But (brightening) - I suppose they 'as a compass.
+&amp;lt;a&amp;gt;Judy&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;IMITATION IS THE SINCEREST, &amp;amp;c.&amp;lt;/t&amp;gt; - D'you know, your paintings remind me most forcibly of Carlo Zetti. - The deuce they do! And who the deuce is Carlo Zetti? - Carlo Zetti is the poor artist who draws in chalks on the pavements of Euston-square. - The deuce he does!
+&amp;lt;a&amp;gt;Judy&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;NOT SO BAD AFTER ALL.&amp;lt;/t&amp;gt; - Mrs McFadden: I'm very queer again, doctor. My cough bothers me so: I'm afraid I'm going to die. - Genial Medical Person: Never mind, it's not a very difficult thing to do. The last year of our life is much easier than the first. You see, there's no teething.
+&amp;lt;a&amp;gt;Judy&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;
+</text>
+                </elementText>
+              </elementTextContainer>
+            </element>
+          </elementContainer>
+        </elementSet>
+      </elementSetContainer>
+    </file>
+  </fileContainer>
+  <collection collectionId="2">
+    <elementSetContainer>
+      <elementSet elementSetId="1">
+        <name>Dublin Core</name>
+        <description>The Dublin Core metadata element set is common to all Omeka records, including items, files, and collections. For more information see, http://dublincore.org/documents/dces/.</description>
+        <elementContainer>
+          <element elementId="50">
+            <name>Title</name>
+            <description>A name given to the resource</description>
+            <elementTextContainer>
+              <elementText elementTextId="13">
+                <text>STAGE THREE: Completed Transcriptions</text>
+              </elementText>
+            </elementTextContainer>
+          </element>
+        </elementContainer>
+      </elementSet>
+    </elementSetContainer>
+  </collection>
+  <itemType itemTypeId="19">
+    <name>Periodical - Transcription item</name>
+    <description/>
+    <elementContainer>
+      <element elementId="61">
+        <name>Periodical Title</name>
+        <description/>
+        <elementTextContainer>
+          <elementText elementTextId="220">
+            <text>Lloyd's Weekly Newspaper</text>
+          </elementText>
+        </elementTextContainer>
+      </element>
+      <element elementId="54">
+        <name>Periodical Frequency</name>
+        <description/>
+        <elementTextContainer>
+          <elementText elementTextId="221">
+            <text>Weekly</text>
+          </elementText>
+        </elementTextContainer>
+      </element>
+      <element elementId="55">
+        <name>Column Title</name>
+        <description/>
+        <elementTextContainer>
+          <elementText elementTextId="222">
+            <text>Jokes of the Day</text>
+          </elementText>
+        </elementTextContainer>
+      </element>
+      <element elementId="56">
+        <name>Gale document number</name>
+        <description/>
+        <elementTextContainer>
+          <elementText elementTextId="223">
+            <text>BC3206274308</text>
+          </elementText>
+        </elementTextContainer>
+      </element>
+      <element elementId="58">
+        <name>Page</name>
+        <description/>
+        <elementTextContainer>
+          <elementText elementTextId="224">
+            <text>7</text>
+          </elementText>
+        </elementTextContainer>
+      </element>
+      <element elementId="59">
+        <name>Year</name>
+        <description/>
+        <elementTextContainer>
+          <elementText elementTextId="225">
+            <text>1890</text>
+          </elementText>
+        </elementTextContainer>
+      </element>
+      <element elementId="60">
+        <name>Date</name>
+        <description/>
+        <elementTextContainer>
+          <elementText elementTextId="226">
+            <text>30/11/1890</text>
+          </elementText>
+        </elementTextContainer>
+      </element>
+    </elementContainer>
+  </itemType>
+  <elementSetContainer>
+    <elementSet elementSetId="1">
+      <name>Dublin Core</name>
+      <description>The Dublin Core metadata element set is common to all Omeka records, including items, files, and collections. For more information see, http://dublincore.org/documents/dces/.</description>
+      <elementContainer>
+        <element elementId="50">
+          <name>Title</name>
+          <description>A name given to the resource</description>
+          <elementTextContainer>
+            <elementText elementTextId="249">
+              <text>Lloyd's Weekly Newspaper (London, England), Sunday, November 30, 1890</text>
+            </elementText>
+          </elementTextContainer>
+        </element>
+      </elementContainer>
+    </elementSet>
+    <elementSet elementSetId="4">
+      <name>Scripto</name>
+      <description/>
+      <elementContainer>
+        <element elementId="52">
+          <name>Transcription</name>
+          <description>A written representation of a document.</description>
+          <elementTextContainer>
+            <elementText elementTextId="565">
+              <text>&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt; THE COUNTRY HOUSE. &amp;lt;/t&amp;gt;
+- (What our architect has to put up with.) - Fair Client: I want it to be nice and baronial, Queen Anne and Elizabethan, and all that; kind of quaint and Nurembergy, you know - regular old English, with French windows opening to the lawn, and venetian blinds, and sort of Swiss balconies, and a loggia. But I'm sure *you* know what I mean!
+&amp;lt;a&amp;gt; Punch. &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;OLD AND CRUSTY. &amp;lt;/t&amp;gt;
+- Fussy old Director: Lemme see, porter-er-how do the Brighton trains run this month? - Crusty Old Porter (snappily): On wheels. [Sacked.]
+&amp;lt;a&amp;gt; Judy. &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt; AGREED. &amp;lt;/t&amp;gt;
+The Tailor (with great firmness): I tell you, captain, unless you pay that bill at once I must put it into other hands. - Captain Hardup (grasping his hand with fervour): My dear friend, I'm eternally obliged to you! I don't care whose hands you put it into so long as you take it out of mine.
+&amp;lt;a&amp;gt; Moonshine &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt; POMPOUS &amp;lt;/t&amp;gt;
+POMPOUS Husband (whose wife has just stolen up and kissed him): Madam, I consider your conduct most indecorous. - She: I'm so sorry, but I didn't know it was you.
+&amp;lt;a&amp;gt; Ariel. &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt; OVER ON BUSINESS. &amp;lt;/t&amp;gt;
+Jones: I always make a point of telling my wife everything that happens. - Brown: My dear fellow, I tell my wife lots of things that never happen.
+&amp;lt;a&amp;gt; Ariel. &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt; [Untitled] &amp;lt;/t&amp;gt;
+"There's no place like home", says the song. We all know that; but unfortunately we never appreciate it until the time comes when we haven't got one.
+&amp;lt;a&amp;gt; Judy. &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt; AN AMBIGUOUS ASSURANCE &amp;lt;/t&amp;gt;
+Mature but Moneyed Young Lady: I know that from the way the fellows do crowd around me you'd think I was a flirt. But I assure you it's not my fault. - Immature but Impecunious Young Lady: No, dear, it's your fortune.
+&amp;lt;a&amp;gt; Ariel &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt;
+Judge: Gentlemen of the jury, have you agreed upon your verdict? - The Jury: Yes, sor; we've had a stiff fight over it, but we're all o' one moind now.
+&amp;lt;a&amp;gt;Fun.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;A 'STOCK' ACTOR.&amp;lt;/t&amp;gt; - Manager (to old actor): No; I'm afraid we've nothing in your way. Old Actor: But, my dear sir, do you know what is my way? I go from Shakespeare to a monkey on a tight rope, and that's a pretty long range, I should think.
+&amp;lt;a&amp;gt;Fun.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;"AND A GOOD JUDGE, TOO".&amp;lt;/t&amp;gt; - Amateur Composer (to musical justice of the peace): Er - by the bye, have you ever tried one of my songs? - Musical J.P. (significantly): No - but I'd like to.
+&amp;lt;a&amp;gt;Funny Folks.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;A CHECK.&amp;lt;/a&amp;gt; - Huntsman: Seen the fox, my boy? - Boy: No, I ain't! - Huntsman: Then, what are you hollarin' for? - Boy (who has been scaring rooks): 'Cos I'm paid for it!
+&amp;lt;a&amp;gt;Punch.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;"O'SHEA-MEFUL&amp;lt;/t&amp;gt;
+Alas! That one in whom poor Erin placed
+&lt;/p&gt;&lt;p&gt;Full faith and credit, she at last discovers
+&lt;/p&gt;&lt;p&gt;To be continued, deservedly disgraced,
+&lt;/p&gt;&lt;p&gt;Basest of friends, and paltriest of lovers.
+&lt;/p&gt;&lt;p&gt;Whether Erin's cause may suffer, who can tell.
+&lt;/p&gt;&lt;p&gt;But he, at least, has rung his own (Par)knell!"
+&lt;/p&gt;&lt;p&gt;&amp;lt;a&amp;gt;Fun.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;THAT APPLE AGAIN.&amp;lt;/t&amp;gt; - Jack: Look here, Winny!- an apple weighing thirty-two ounces. - Winny: Dear me! It must have been the dying effort of the tree.
+&amp;lt;a&amp;gt;Judy&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt; Can Messrs. Dillon and O'Brien by arrested in Canada? We hope not; surely there is no such hurry as that to get them home again.
+&amp;lt;a&amp;gt;Moonshine.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt; At Hatfield last week policemen and burglars, armed with revolvers, three to three, fired at one another for quite a long time. At last one of the policemen got his finger hurt. Then the three burglars went away - honour was satisfied.
+&amp;lt;a&amp;gt;Moonshine&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;SPRINGING A 'MINE'.&amp;lt;/t&amp;gt; - Lord Lackland: Miss Vandenboom, I love you. Say you will be mine. - Miss Vandenboom (American millionairess): Well, my lord, I reckon I can never be any man's; but you can be mine, if you like.
+&amp;lt;a&amp;gt;Funny Folks&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt; Boulanger is going to start a paper, and be his own editor. &lt;i&gt;Aut scissors aut nullus!&lt;/i&gt; Disaster has not quenched his aspirations.
+&amp;lt;a&amp;gt;Moonshine&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt; I don't know what it is, Mark, but I can't hit a bird to-day. - Let me see your gun, sir. Ah! - well, I'd try what you could do with some cartridges in it, if I was you, sir.
+&amp;lt;a&amp;gt;Punch.&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;SHORTLY TO APPEAR.&amp;lt;/t&amp;gt; - Companion volume to "Oceana." New work, by C. S. P-rn-ll, entitled, "O'Sheana."
+&amp;lt;a&amp;gt;Punch. &amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt; Mr. Stanley and his Troup have been giving daily performances to large audiences.
+&amp;lt;a&amp;gt;Punch&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;PRESSING.&amp;lt;/t&amp;gt; - Mr. Truelove: Now I'll go. I'm afraid I've taken up too much your time already. - Lady Novelist: I'm so glad to have seen you. I'm busy now with the opening chapters of my next three-volume novel. You must come again when I've finished it.
+&amp;lt;a&amp;gt;Judy&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;[Untitled]&amp;lt;/t&amp;gt; "Bark," a colour resembling the sails of fishing boats, is the fashionable tint for autumn. With a favourable breeze no doubt the bark will have a good sail.
+&amp;lt;a&amp;gt;Moonshine&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;Why Mr. Parnell Will "Go" If He Does "Go."&amp;lt;/t&amp;gt; - For "divorce" reasons, to be sure.
+&amp;lt;a&amp;gt;Funny Folks&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;ALL RIGHT NOW.&amp;lt;/t&amp;gt; - Well, how is your little boy, mrs. Wiggles? - Oh, much better now, mum. I took him to the doctor, who said it was only a rash broke out all over his body, and he gave him some medicine to putrify his blood.
+&amp;lt;a&amp;gt;Judy&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;A ROUNDABOUT ROLE.&amp;lt;/t&amp;gt; - A rigmarole. 
+&amp;lt;a&amp;gt;Funny Folks&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;RUS IN URBE.&amp;lt;/t&amp;gt; Old Lady (from the country, as train is nearing Cannon-street): It is wonderful 'ow they knows which line to go on; 'an all so much alike. But (brightening) - I suppose they 'as a compass.
+&amp;lt;a&amp;gt;Judy&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;IMITATION IS THE SINCEREST, &amp;amp;c.&amp;lt;/t&amp;gt; - D'you know, your paintings remind me most forcibly of Carlo Zetti. - The deuce they do! And who the deuce is Carlo Zetti? - Carlo Zetti is the poor artist who draws in chalks on the pavements of Euston-square. - The deuce he does!
+&amp;lt;a&amp;gt;Judy&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;&lt;p&gt;&amp;lt;j&amp;gt;
+&amp;lt;t&amp;gt;NOT SO BAD AFTER ALL.&amp;lt;/t&amp;gt; - Mrs McFadden: I'm very queer again, doctor. My cough bothers me so: I'm afraid I'm going to die. - Genial Medical Person: Never mind, it's not a very difficult thing to do. The last year of our life is much easier than the first. You see, there's no teething.
+&amp;lt;a&amp;gt;Judy&amp;lt;/a&amp;gt;
+&amp;lt;/j&amp;gt;
+&lt;/p&gt;
+</text>
+            </elementText>
+          </elementTextContainer>
+        </element>
+      </elementContainer>
+    </elementSet>
+  </elementSetContainer>
+</item>
