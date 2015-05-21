@@ -1,1 +1,1 @@
-DATABASE_PATH='//tmp/test.db'
+DATABASE_PATH='/var/jokes/main.db'

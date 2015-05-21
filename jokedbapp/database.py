@@ -28,3 +28,5 @@ def init_test_db():
   Base.metadata.create_all(bind=engine)
   return db_session
 
+
+db_session = init_db()
