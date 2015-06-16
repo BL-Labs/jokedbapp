@@ -96,16 +96,35 @@ class OmekaXML(object):
   def _text_retrieval(self, itemelement, section, fieldid):
     return itemelement.find("{0}[@itemTypeId='{1}']/{2}/{3}[@elementId='{4}']/{5}/{6}/{7}".format(om("itemType"), section, om("elementContainer"), 
                                                                                                   om("element"), fieldid, om("elementTextContainer"), 
-                                                                                                  om("elementText"), om("text") ))
+                                                                                                  om("elementText"), om("text") )).text
+
+  def _special_text_retrieval(self, itemelement, section, fieldid):
+    return itemelement.find("{0}/{1}[@elementSetId='{2}']/{3}/{4}[@elementId='{5}']/{6}/{7}/{8}".format(om("elementSetContainer"), om("elementSet"), section, om("elementContainer"), 
+                                                                                                  om("element"), fieldid, om("elementTextContainer"), 
+                                                                                                  om("elementText"), om("text") )).text
 
   def _get_metadata(self):
     if self.parsed:
-      metadata_set = {}
       for idx, item in enumerate(self.doc.findall(om("item"))):
-        pass # parse out the metadata
+        metadata_set = {}
+        metadata_set['periodical_title'] = self._text_retrieval(item, "19", "61")
+        metadata_set['periodical_freq'] = self._text_retrieval(item, "19", "54").lower()
+        metadata_set['article_title'] = self._text_retrieval(item, "19", "55")
+        metadata_set['gale'] = self._text_retrieval(item, "19", "56")
+        metadata_set['page'] = self._text_retrieval(item, "19", "58")
+        metadata_set['date'] = self._text_retrieval(item, "19", "60")
+        metadata_set['year'] = self._text_retrieval(item, "19", "59")
+
+        metadata_set['citation'] = self._special_text_retrieval(item, "1", "50")
+        raw = BeautifulSoup(self._special_text_retrieval(item, "4", "52"))
+        # just the text and strip out the '\n':
+        metadata_set['raw'] = u"".join(raw.get_text().split("\n"))
+        
+        self.metadata[idx] = metadata_set
     else:
       print("Omeka XML was unparsable")
 
 if __name__ == "__main__":
   with open("test_omeka_collection.xml", "r") as inp:
     o = OmekaXML(inp.read())
+    o.parse()
