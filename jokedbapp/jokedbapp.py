@@ -140,10 +140,9 @@ def dry_run_regenerate_jokes(transcription_id):
     # dry run!
     jokes = _get_jokes(t)
     if jokes:
-      flash("\n".join(["Title:{0.title} --=-- {0.text} \n({0.attribution})".format(j) for j in jokes]))
-      flash("{0} jokes found".format(len(jokes)))
+      flash(u"{0} jokes found".format(len(jokes)))
     else:
-      flash("No Jokes detected!")
+      flash(u"No Jokes detected!")
     return redirect(url_for('display_transcription', trans_id=t.id))
     
 
@@ -181,14 +180,24 @@ def create_new_work():
   flash("Created new bibliographic work and updated information.")
   return redirect(url_for('display_work', work_id=b.id))
 
-@app.route("/works", methods=["DELETE"])
+@app.route("/delete_work/<int:work_id>", methods=["POST"])
 def delete_work(work_id):
-  # TODO
-  pass
-  
+  if session['logged_in'] != True:
+    abort(401)
+  else:
+    b = Biblio.query.get(work_id)
+    if not b:
+      abort(404)
+
+    b_id, title = b.id, b.title
+    db_session.delete(b)
+    db_session.commit()
+    flash("Deleted Work id: {0} - '{1}'".format(b_id, title))
+  return redirect(url_for('display_work_admin'))
+
 @app.route("/works", methods=['GET'])
 def display_work_admin():
-  offset, paging = 0, 10
+  offset, paging = 0, 40
   if request.method == "GET":
     get_offset = request.args.get("offset", offset)
     get_paging = request.args.get("paging", paging)
@@ -227,8 +236,42 @@ def edit_update_work(work_id):
     flash("Saved edited bibliographic information for this work.")
     return redirect(url_for('display_work', work_id=b.id))
 
+def _update_and_store_transcription_metadata(t, request):
+    if request.values.get("biblio_id", ""):
+      try:
+        biblio_id = int(request.values.get("biblio_id"))
+        b = Biblio.query.get(biblio_id)
+        if b:
+          t.biblio = b
+      except ValueError as e:
+        pass
+
+    user_id = session['logged_in_user']
+    u = User.query.get(user_id)
+
+    raw = request.values.get("raw", "")
+    if raw:
+      t.raw = raw
+    text = request.values.get("text", "")
+    if text:
+      t.text = text
+
+    t.edited = u
+    t.pagestart = request.values.get("pagestart", "0")
+    t.pageend = request.values.get("pagestart", "0")
+    t.volume = request.values.get("volume", "")[:29]
+    t.article_title = request.values.get("article_title", "")[:69]
+
+    db_session.add(t)
+    db_session.commit()
+
 def _update_and_store(b, request):
     # update the joke db with the edited text
+    user_id = session['logged_in_user']
+    u = User.query.get(user_id)
+
+    b.creator = u
+
     b.title = request.values.get("title", "")
     b.author= request.values.get("author", "")
     b.editor = request.values.get("editor", "")
@@ -388,6 +431,8 @@ def search():
 @app.route("/works/<int:work_id>", methods=['GET'])
 def display_work(work_id):
   b = Biblio.query.get(work_id)
+  if not b:
+    abort(404)
   offset, paging = 0, 30
   if request.method == "GET":
     get_offset = request.args.get("offset", offset)
@@ -407,8 +452,6 @@ def display_work(work_id):
 
   forward = offset+paging
   if forward<0: forward = 0
-  if not b:
-    abort(404)
   return render_template('display_work.html', b=b, offset=offset, paging=paging, \
                                            back=back, forward=forward, transcription_list=transcription_list)
 
