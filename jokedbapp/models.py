@@ -55,7 +55,7 @@ class Biblio(Base):
   #creator = relationship(User, backref=backref('biblio_author', uselist=True))
   transcription_sections = relationship("Transcription", backref="biblio")
   
-  def __init__(self, title, date, year=0, author=None, editor=None, publisher=None, city=None, \
+  def __init__(self, title=None, date=None, year=0, author=None, editor=None, publisher=None, city=None, \
                      country=None, gale=None, blshelfmark=None, shownby=None, rights=None, \
                      rightsholder=None, itemtype=None, periodical_freq="NA", citation=None, record_creator = None):
     self.title = title
