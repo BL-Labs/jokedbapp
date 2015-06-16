@@ -9,6 +9,8 @@ from utils.tumblr_post import tumblr_imagepost
 from utils.twitter_post import twitter_imagepost
 from utils.tumblrcreds import blog
 
+from utils.handle_transcript import TranscriptionParser as TP
+
 import tempfile
 
 # app-wide configuration
@@ -94,6 +96,156 @@ def display_joke(joke_id):
   if not j:
     abort(404)
   return render_template('display_joke_page.html', j=j, tumblr_account="http://victorianhumour.tumblr.com/post/") # FIXME
+
+@app.route("/transcription/<int:transcription_id>", methods=["POST"])
+def edit_update_transcription(transcription_id):
+  if session['logged_in'] != True:
+    abort(401)
+  else:
+    t = Transcription.query.get(transcription_id)
+    if not t:
+      abort(404)
+    # update the joke db with the edited text
+    text = request.values.get("rawtext", "")
+    if text:
+      # TODO only admins? Seeing as we only have admins...
+      t.raw = text
+      db_session.add(t)
+      db_session.commit()
+      flash("Saved edited text for this Transcription. (Jokes created from the original transcription are unaffected. Please regenerate the Jokes to delete them and create new ones.)")
+    else:
+      flash("NO TEXT ENTERED. No change will be made to the DB.")
+
+    return redirect(url_for('display_transcription', trans_id=t.id))
+
+def _get_jokes(t):
+    tp = TP()
+    #try:
+    if True:
+      tp.fromstring(t.raw)
+      if tp.parsed():
+        return tp
+    #except Exception as e:
+    #  flash(e)
+      return []
+    
+@app.route("/dry_run_regenerate_jokes/<int:transcription_id>", methods=["POST"])
+def dry_run_regenerate_jokes(transcription_id):
+  if session['logged_in'] != True:
+    abort(401)
+  else:
+    t = Transcription.query.get(transcription_id)
+    if not t:
+      abort(404)
+    # dry run!
+    jokes = _get_jokes(t)
+    if jokes:
+      flash("\n".join(["Title:{0.title} --=-- {0.text} \n({0.attribution})".format(j) for j in jokes]))
+      flash("{0} jokes found".format(len(jokes)))
+    else:
+      flash("No Jokes detected!")
+    return redirect(url_for('display_transcription', trans_id=t.id))
+    
+
+@app.route("/regenerate_jokes/<int:transcription_id>", methods=["POST"])
+def regenerate_jokes(transcription_id):
+  if session['logged_in'] != True:
+    abort(401)
+  else:
+    t = Transcription.query.get(transcription_id)
+    if not t:
+      abort(404)
+    # get list of jokes derived from this one and delete them
+    jokes = _get_jokes(t)
+    if jokes:
+      flash("Found {0} jokes within the transcription.".format(len(jokes)))
+      jokes_deleted = []
+      for deadjoke in t.joke_children:
+        jokes_deleted.append(deadjoke.id)
+        db_session.delete(deadjoke)
+      flash("Deleted {0} jokes - IDs:({1})".format(len(jokes_deleted), jokes_deleted))
+      for idx, joke in enumerate(jokes):
+        j = Joke(transcription = t, text = joke.text, transcription_position = idx, title=joke.title, attribution=joke.attribution, joketext = joke.text)
+        db_session.add(j)
+        # Do all jokes, then commit?
+        db_session.commit()
+      flash("{0} jokes generated from this transcription".format(idx+1))
+  return redirect(url_for('display_transcription', trans_id=t.id))
+
+@app.route("/works", methods=["POST"])
+def create_new_work():
+  if session['logged_in'] != True:
+    abort(401)
+  b = Biblio()
+  _update_and_store(b, request)
+  flash("Created new bibliographic work and updated information.")
+  return redirect(url_for('display_work', work_id=b.id))
+
+@app.route("/works", methods=["DELETE"])
+def delete_work(work_id):
+  # TODO
+  pass
+  
+@app.route("/works", methods=['GET'])
+def display_work_admin():
+  offset, paging = 0, 10
+  if request.method == "GET":
+    get_offset = request.args.get("offset", offset)
+    get_paging = request.args.get("paging", paging)
+    try:
+      paging = int(get_paging)
+      offset = int(get_offset)
+      if offset < 0:
+        offset = 0
+      if paging < 0:
+        paging = 10
+    except ValueError as e:
+      flash('Not a valid parameter')
+
+  # should be fine with small numbers of works... FIXME
+  works_list = Biblio.query.all()[offset:offset+paging]
+  back = offset-paging
+  if back<0: back = 0
+
+  forward = offset+paging
+  if forward<0: forward = 0
+
+  return render_template('display_works.html', offset=offset, paging=paging, \
+                                               back=back, forward=forward, works_list=works_list, b=[])
+
+
+@app.route("/works/<int:work_id>", methods=["POST"])
+def edit_update_work(work_id):
+  if session['logged_in'] != True:
+    abort(401)
+  else:
+    b = Biblio.query.get(work_id)
+    if not b:
+      abort(404)
+
+    _update_and_store(b, request)
+    flash("Saved edited bibliographic information for this work.")
+    return redirect(url_for('display_work', work_id=b.id))
+
+def _update_and_store(b, request):
+    # update the joke db with the edited text
+    b.title = request.values.get("title", "")
+    b.author= request.values.get("author", "")
+    b.editor = request.values.get("editor", "")
+    b.publisher = request.values.get("publisher", "")
+    b.date = request.values.get("date", "")
+    b.city = request.values.get("city", "")
+    b.country = request.values.get("country", "")
+    b.rights = request.values.get("rights", "")
+    b.rightsholder = request.values.get("rightsholder", "")
+    b.periodical_freq = request.values.get("periodical_freq", "NA")
+    b.itemtype = request.values.get("itemtype", "periodical")
+    b.citation = request.values.get("citation", "")
+    b.blshelfmark = request.values.get("blshelfmark", "")
+    b.gale = request.values.get("gale", "")
+    
+    db_session.add(b)
+    db_session.commit()
 
 @app.route("/joke/<int:joke_id>", methods=["POST"])
 def edit_update_joke(joke_id):
@@ -233,7 +385,7 @@ def search():
   else:
     return redirect(url_for('home_page'))
 
-@app.route("/work/<int:work_id>", methods=['GET'])
+@app.route("/works/<int:work_id>", methods=['GET'])
 def display_work(work_id):
   b = Biblio.query.get(work_id)
   offset, paging = 0, 30
