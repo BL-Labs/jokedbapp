@@ -12,9 +12,9 @@ class User(Base):
   email = Column(String(120), unique=True)
   pw_hash = Column(String)
   role = Column(Enum('admin','transcriber', 'publisher', name='role_types'))
-  transcriptions = relationship("Transcription", backref="edited")
-  biblio_records = relationship("Biblio", backref="creator")
-  joke_records = relationship("Joke", backref="publisher")
+  transcriptions = relationship("Transcription", backref="edited", cascade="delete")
+  biblio_records = relationship("Biblio", backref="creator", cascade="delete")
+  joke_records = relationship("Joke", backref="publisher", cascade="delete")
 
   def __init__(self, name=None, email=None, role='transcriber', pw_hash = pw_hash):
     self.name = name
