@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block body %}
+{% if not t %}
+<h2>No such ID</h2>
+{% else %}
+<h2> Transcription [{{ t.id }}] </h2>
+<h3>Part of <a href="{{ url_for('display_work', work_id = b.id) }}">Work {{ b.id }}</a> {{ b.title | safe }}
+{% if b.date %}
+({{ b.date }})
+{% endif %}
+} </h3>
+
+    {% if session.logged_in %}
+    <div>&gt; Transcription Text for <a href="{{ url_for("display_transcription", trans_id = t.id) }}">{{ t.id }}</a></div>
+
+    <pre>
+{{ t.raw }}</pre>
+  <p>
+    <form action="{{ url_for('edit_update_transcription', transcription_id = t.id)}}" method="POST">
+      {% if t.raw %}
+    <textarea name="rawtext" class="textarea-large">{{ t.raw }}</textarea>
+      {% else %}
+    <textarea name="rawtext" class="textarea-large"></textarea>
+      {% endif %}
+      <button type="submit" class="btn btn-sm btn-warning">Change transcription text</button>
+    </form>
+    <p>
+      <form action="{{ url_for('dry_run_regenerate_jokes', transcription_id = t.id)}}" method="POST">
+        <button type="submit" class="btn btn-sm btn-info">TEST Regenerate Jokes from Transcription (SAFE! results in the message bar at the top</button>
+      </form>
+    </p>
+    <hr/>
+    <form action="{{ url_for('regenerate_jokes', transcription_id = t.id)}}" method="POST">
+      <button type="submit" class="btn btn-sm btn-info">Regenerate Jokes from Transcription (WARNING There is NO UNDO!)</button>
+    </form>
+  </p>       
+    {% endif %}
+    
+<p>Jokes found in this transcription:</p>
+<div><small>
+<ul>
+{% for item in t.joke_children[:30] %}
+  {% if item.title %}
+<blockquote><a href="{{ url_for("display_joke", joke_id = item.id) }}">Joke {{item.id}}</a> - <em>"<strong>{{ item.title }}</strong> {{ item.joketext[:100] }}
+{% if item.joketext|length > 100 %}
+ ...
+{% endif %}
+"</em></blockquote>
+  {% else %}
+<blockquote><a href="{{ url_for("display_joke", joke_id = item.id) }}">Joke {{item.id}}</a> - <em>"{{ item.text[:100] }}"</em></blockquote>
+  {% endif %}
+{% endfor %}
+</ul></small></div>
+<p><small>Transcription record created on {{ t.created_at }} by user '{{ t.edited.name }}'</small></p>
+{% endif %}
+{% endblock %}

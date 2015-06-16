@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+  <div class="container">
+    <div class="jumbotron">
+      <h3>Victorian Jokes</h3>
+      <p>An experimental database of Victorian jokes, clipped from the British Library's digital collections. Visit <a href="http://victorianhumour.tumblr.com">victorianhumour.tumblr.com</a> to see the latest published jokes.</p>
+    </div>
+  </div>
+  <div class="container">
+    <p>
+    {% if offset>0 %}
+    <a href="/?offset={{ back }}&paging={{ paging }}"><button class="btn btn-sm btn-primary">Prev</button></a>
+    {% endif %}
+    ... {{ offset+1 }} ... {{ offset+paging+1 }} ...
+    <a href="/?offset={{ forward }}&paging={{ paging }}"><button class="btn btn-sm btn-primary">Next</button></a>
+    </p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1"><strong>Joke ID</strong></div>
+      <div class="col-md-6"><strong>Transcriped text</strong></div>
+      <div class="col-md-2"><strong>From</strong></div>
+      <div class="col-md-1"><strong>Date</strong></div>
+      <div class="col-md-2"><strong>Added on</strong></div>
+    </div>
+  {% for entry in latest %}
+    <div class="row">
+      <div class="col-md-1"><a href="{{ url_for('display_joke', joke_id = entry.id) }}">{{ entry.id|safe }}</a></div>
+      <div class="col-md-6">{{ entry.text[:150]|safe }}</div>
+      <div class="col-md-2">{{ entry.from_transcription.biblio.title | safe }}</div>
+      <div class="col-md-1">{{ entry.from_transcription.biblio.date | safe }}</div>
+      <div class="col-md-2">{{ entry.created_at | safe }}</div>
+    </div>
+  {% else %}
+    <div>Unbelievable.  No entries here so far</div>
+  {% endfor %}
+  </div>
+{% endblock %}

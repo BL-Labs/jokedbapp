@@ -1,0 +1,148 @@
+<fieldset>
+
+<!-- Form Name -->
+<legend>General bibliographic details of the source material</legend>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="title">Title</label>
+  <div class="controls">
+    <input id="title" name="title" type="text" placeholder="Title?" class="input-xlarge" value="{{ b.title }}">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="author">Author</label>
+  <div class="controls">
+    <input id="author" name="author" type="text" placeholder="Author?" value="{{ b.author }}" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="editor">Editor</label>
+  <div class="controls">
+    <input id="editor" name="editor" type="text" placeholder="Editor?" value="{{ b.editor }}" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="date">Full date of publication</label>
+  <div class="controls">
+    <input id="date" name="date" type="text" placeholder="Date of publication?" value="{{ b.date }}" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="control-group">
+  <label class="control-label" for="itemtype">Book or Periodical?</label>
+  <div class="controls">
+    <select id="itemtype" name="itemtype" class="input-xlarge">
+      {% if b.itemtype == "book" %}
+      <option selected>book</option>
+      <option>periodical</option>
+      {% elif b.itemtype == "periodical" %}
+      <option>book</option>
+      <option selected>periodical</option>
+      {% else %}
+      <option>book</option>
+      <option>periodical</option>
+      {% endif %}
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="control-group">
+  <label class="control-label" for="periodical_freq">Frequency of Publication?</label>
+  <div class="controls">
+    <select id="periodical_freq" name="periodical_freq" class="input-xlarge">
+      
+      <option {% if b.periodical_freq == "weekly" %}selected{% endif %}>weekly</option>
+      <option {% if b.periodical_freq == "daily" %}selected{% endif %}>daily</option>
+      <option {% if b.periodical_freq == "fortnightly" %}selected{% endif %}>fortnightly</option>
+      <option {% if b.periodical_freq == "monthly" %}selected{% endif %}>monthly</option>
+      <option {% if b.periodical_freq == "annually" %}selected{% endif %}>annually</option>
+      <option {% if b.periodical_freq == "NA" %}selected{% endif %}>NA</option>
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="publisher">Publisher</label>
+  <div class="controls">
+    <input id="publisher" name="publisher" type="text" placeholder="Publisher?" value="{{ b.publisher }}" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="city">City</label>
+  <div class="controls">
+    <input id="city" name="city" type="text" placeholder="City of publication?" value="{{ b.city }}" class="input-xlarge">
+    
+  </div>
+</div>
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="country">Country</label>
+  <div class="controls">
+    <input id="country" name="country" type="text" placeholder="Country?" value="{{ b.country }}" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="blshelfmark">BL Shelfmark?</label>
+  <div class="controls">
+    <input id="blshelfmark" name="blshelfmark" type="text" placeholder="" value="{{ b.blshelfmark }}" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="gale">Gale</label>
+  <div class="controls">
+    <input id="gale" name="gale" type="text" placeholder="" value="{{ b.gale }}" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="citation">Citation?</label>
+  <div class="controls">
+    <input id="citation" name="citation" type="text" placeholder="" value="{{ b.citation }}" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="rights">Rights</label>
+  <div class="controls">
+    <input id="rights" name="rights" type="text" placeholder="rights" value="{{ b.rights }}" class="input-xlarge">
+    
+  </div>
+</div>
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="rightsholder">Rights-Holder</label>
+  <div class="controls">
+    <input id="rightsholder" name="rightsholder" type="text" placeholder="Rights-holder?" value="{{ b.rightsholder }}" class="input-xlarge">
+    
+  </div>
+</div>
+
+  <button type="submit" class="btn btn-sm btn-warning">Submit changes</button>
+</fieldset>

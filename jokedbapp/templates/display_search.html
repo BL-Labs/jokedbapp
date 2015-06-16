@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block body %}
+{% if not query %}
+<h2>No such search</h2>
+{% else %}
+<h2> Jokes like: [{{ query }}] </h2>
+  <div class="container">
+    <p>
+    {% if offset>0 %}
+    <a href="{{ url_for('search', q=query, offset=back, paging=paging) }}"><button class="btn btn-sm btn-primary">Prev</button></a>
+    {% endif %}
+    ... {{ offset+1 }} ... {{ offset+paging+1 }} ...
+    <a href="{{ url_for('search', q=query, offset=forward, paging=paging) }}"><button class="btn btn-sm btn-primary">Next</button></a>
+    </p>
+  </div>
+<div><small>
+<ul>
+{% for item in jokes %}
+  {% if item.title %}
+<blockquote><a href="{{ url_for("display_joke", joke_id = item.id) }}">Joke {{item.id}}</a> - <em>"<strong>{{ item.title }}</strong> {{ item.joketext[:100] }}
+{% if item.joketext|length > 100 %}
+ ...
+{% endif %}
+"</em></blockquote>
+  {% else %}
+<blockquote><a href="{{ url_for("display_joke", joke_id = item.id) }}">Joke {{item.id}}</a> - <em>"{{ item.text[:100] }}"</em></blockquote>
+  {% endif %}
+{% endfor %}
+{% endif %}
+{% endblock %}

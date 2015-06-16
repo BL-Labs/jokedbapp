@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block body %}
+{% if not b %}
+<h2>No such ID</h2>
+{% else %}
+<h2> Work [{{ b.id }}] </h2>
+<h3>{{ b.title | safe }} </h3>
+<ul>
+  {% if b.author %}
+<li>Author: {{ b.author }}</li>
+  {% endif %}
+  {% if b.editor %}
+<li>Editor: {{ b.editor }}</li>
+  {% endif %}
+  {% if b.date %}
+<li>Date Published: {{ b.date }}</li>
+  {% endif %}
+  {% if b.publisher %}
+<li>Publisher: {{ b.publisher }}</li>
+  {% endif %}
+  {% if b.city %}
+<li>City: {{ b.city }}</li>
+  {% endif %}
+  {% if b.country %}
+<li>Country: {{ b.country }}</li>
+  {% endif %}
+  {% if b.rights %}
+<li>Rights: {{ b.rights }}</li>
+  {% endif %}
+  {% if b.rightsholder %}
+<li>Rights Holder: {{ b.rightsholder }}</li>
+  {% endif %}
+  {% if b.periodical_freq != "NA" %}
+<li>Periodical Frequency: {{ b.periodical_freq }}</li>
+  {% endif %}
+</ul>
+
+    {% if session.logged_in %}
+    <h2>Edit:</h2>
+    <form action="{{ url_for('edit_update_work', work_id = b.id)}}" method="POST">
+      {% include 'work_form.html' %}
+    </form>
+    {% endif %}
+    
+<h3>Transcriptions associated with this work:</h3>
+  <div class="container">
+    <p>
+    {% if offset>0 %}
+    <a href="{{ url_for('display_work', work_id = b.id, offset=back, paging=paging) }}"><button class="btn btn-sm btn-primary">Prev</button></a>
+    {% endif %}
+    ... {{ offset+1 }} ... {{ offset+paging+1 }} ...
+    <a href="{{ url_for('display_work', work_id = b.id, offset=forward, paging=paging) }}"><button class="btn btn-sm btn-primary">Next</button></a>
+    </p>
+  </div>
+<div><small>
+<ul>
+	{% for item in transcription_list %}
+<li><a href="{{ url_for("display_transcription", trans_id = item.id) }}">Page{% if item.pagestart != item.pageend %}s: {{ item.pagestart }}-{{ item.pageend }}
+  {% else %}: {{ item.pagestart }}
+  {% endif %}
+</a></li>
+{% endfor %}
+</ul></small></div>
+<p><small>Record created on {{ b.created_at }} by user '{{ b.creator.name }}'</small></p>
+{% endif %}
+{% endblock %}

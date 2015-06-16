@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block body %}
+{% if not j %}
+<h2> No such ID </h2>
+{% else %}
+<div class="row">
+  <div class="col-md-8">
+    <p><a href="{{ url_for('display_joke', joke_id = j.id - 1) }}">Prev</a> ---- <a href="{{ url_for('display_joke', joke_id = j.id + 1) }}">Next</a>
+    <h2>Joke ID {{ j.id | safe }}</h2>
+    <div>Work: <a href="{{ url_for("display_work", work_id = j.from_transcription.biblio.id) }}">[{{ j.from_transcription.biblio.id }}] '{{ j.from_transcription.biblio.title[:20] | safe }}...'({{ j.from_transcription.biblio.date | safe}}, {{ j.from_transcription.biblio.itemtype }})</a></div>
+    <div>&gt; Transcription: <a href="{{ url_for("display_transcription", trans_id = j.from_transcription.id) }}">[{{ j.from_transcription.id }}] from page
+      {% if j.from_transcription.pagestart != j.from_transcription.pageend %}
+    s: {{ j.from_transcription.pagestart }}-{{ j.from_transcription.pageend }}
+      {% else %}
+    : {{ j.from_transcription.pagestart }}
+      {% endif %}</a></div>
+    {% if session.logged_in %}
+    <div>&gt;&gt; Joke: <a href="{{ url_for("display_joke", joke_id = j.id) }}">{{ j.id }}</a></div>
+
+    <form action="{{ url_for('edit_update_joke', joke_id = j.id)}}" method="POST">
+      {% if j.title %}
+    <p><input type="text" class="input-xlarge" name="title" value="{{ j.title }}"</input></p>
+    <textarea name="joketext" class="textarea-large">{{ j.joketext }}</textarea>
+    <p><input type="text" class="input-xlarge" name="attrib" value="{{ j.attribution }}"</input></p>
+      {% else %}
+    <textarea name="joketext">{{ j.joketext }}</textarea>
+      {% endif %}
+      <button type="submit" class="btn btn-sm btn-warning">Submit changes</button>
+    </form>
+      
+    {% else %}
+    <div>&gt;&gt; Joke: <a href="{{ url_for("display_joke", joke_id = j.id) }}">{{ j.id }}</a></div>
+      {% if j.title %}
+    <p><strong>{{ j.title }}</strong></p>
+    <p>{{ j.joketext }}</p>
+    <p><em>{{ j.attribution }}</em></p>
+      {% else %}
+    <p>{{ j.text }}</p>
+      {% endif %}
+    {% endif %}
+    <p><img src="{{ url_for("render_joke_w_image", joke_id = j.id) }}"/></p>
+    <p>From:
+      {% if j.from_transcription.biblio.itemtype == "book" %}
+    <ul>
+      <li><strong>Book title</strong>: {{ j.from_transcription.biblio.title | safe }}</li>
+      <li><strong>Date</strong>: {{ j.from_transcription.biblio.date | safe }}</li>
+      <li><strong>Joke taken from</strong>: Page {{ j.from_transcription.pagestart | safe }}</li>
+      <li><strong>Book Editor</strong>: {{ j.from_transcription.biblio.editor | safe }}</li>
+      <li><strong>City</strong>: {{ j.from_transcription.biblio.city | safe }}</li>
+      <li><strong>Country</strong>: {{ j.from_transcription.biblio.country | safe }}</li>
+      <li><strong>Added by</strong>: {{ j.from_transcription.edited.name | safe }}</li>
+    </ul>
+      {% else %}
+    <ul>
+      <li><strong>Newspaper title</strong>:{{ j.from_transcription.biblio.title | safe }}</li>
+      <li><strong>Date</strong>:{{ j.from_transcription.biblio.date | safe }}</li>
+      <li><strong>Article Title</strong>: {{ j.from_transcription.article_title | safe }}</li>
+      <li><strong>Joke taken from</strong>: Page {{ j.from_transcription.pagestart | safe }}</li>
+      <li><strong>Book Editor</strong>:{{ j.from_transcription.biblio.editor | safe }}</li>
+    </ul>
+      {% endif %}
+  </div>
+  {% if session.logged_in %}
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>Administration</h4>
+      </div>
+      <div class="panel-body">
+        {% if j.published_at %}
+<p><a href="{{ tumblr_account }}{{ j.tumblr_id }}">View on tumblr</a></p>
+<form action="{{ url_for('remove_from_tumblr', joke_id = j.id)}}" method="POST">
+  <button type="submit" class="btn btn-sm btn-warning">Remove link to tumblr</button>
+</form>
+        {% else %}
+<form action="{{ url_for('publish_to_tumblr', joke_id = j.id)}}" method="POST">
+  <button type="submit" class="btn btn-sm btn-warning">Publish to tumblr</button>
+</form>
+        {% endif %}
+        {% if j.twitter_id %}
+<p><a href="https://twitter.com/VictorianHumour/status/{{ j.twitter_id }}">View tweet</a></p>
+        {% else %}
+<form action="{{ url_for('tweet_joke', joke_id = j.id)}}" method="POST">
+  <button type="submit" class="btn btn-sm btn-warning">Tweet joke</button>
+</form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {% if j.published_at %}
+<p><a href="{{ tumblr_account }}{{ j.tumblr_id }}">View on tumblr</a></p>
+        {% else %}
+Not yet published to Tumblr.
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% endif %}
+</div>
+{% endif %}
+{% endblock %}
+
