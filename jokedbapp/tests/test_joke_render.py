@@ -4,7 +4,7 @@ from render_joke import ICanHaz
 
 from test_data import JOKES
 
-class TestJokeClass(unittest.TestCase):
+class TestJokeRenderClass(unittest.TestCase):
   def setUp(self):
     self.renderer = ICanHaz()
 
@@ -24,8 +24,9 @@ class TestJokeClass(unittest.TestCase):
     self.assertEquals(lines[0][0], "TITLE")
     self.assertEquals(lines[0][1], title)
 
-    self.assertEquals(lines[-1][0], "EMPHASIS")
-    self.assertEquals(lines[-1][1], attrib)
+    # Attribution is removed from the main body of the joke text render
+    #self.assertEquals(lines[-1][0], "DEFAULT_SMALL")
+    #self.assertEquals(lines[-1][1], attrib)
     
   def test_04_get_size_JOKE1(self):
     title, text, attrib = JOKES[0]

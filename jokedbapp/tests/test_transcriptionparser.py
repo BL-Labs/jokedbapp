@@ -1,6 +1,6 @@
 import unittest
 
-from utils.handle_transcript import TranscriptionParser, OmekaXML
+from utils.handle_transcript import TranscriptionParser, OmekaXML, om
 
 from test_data import TRANSCRIPTIONS
 
@@ -67,9 +67,29 @@ class TestOmekaXML(unittest.TestCase):
   def setUp(self):
     self.o = OmekaXML()
 
+  def test_00a_om_namespacer(self):
+    self.assertEquals("{http://omeka.org/schemas/omeka-xml/v5}item", om("item"))
+
+  def test_00b_om_namespacer(self):
+    self.assertEquals("{http://omeka.org/schemas/omeka-xml/v5}elementType", om("elementType"))
+
   def test_01_load_xml_from_file(self):
     with open(OMEKA_COLLECTION, "r") as inp:
       self.o = OmekaXML(inp.read())
+
+  def test_02_parse_xml_and_step_through(self):
+    with open(OMEKA_COLLECTION, "r") as inp:
+      self.o = OmekaXML(inp.read())
+    self.o.parse()
+  def test_03_parse_and_retrievel_title(self):
+    with open(OMEKA_COLLECTION, "r") as inp:
+      self.o = OmekaXML(inp.read())
+    self.o.parse()
+    # get title from the first item
+    item = self.o.doc.find(om("item"))
+    elmt = self.o._text_retrieval(item, "19", "61")
+    self.assertTrue(elmt != None)
+    self.assertTrue(elmt.text.startswith("Lloyd"))
 
 if __name__ == "__main__":
   unittest.main()
