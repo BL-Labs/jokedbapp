@@ -60,7 +60,7 @@
 <div><small>
 <ul>
 	{% for item in transcription_list %}
-<li><a href="{{ url_for("display_transcription", trans_id = item.id) }}">Page{% if item.pagestart != item.pageend %}s: {{ item.pagestart }}-{{ item.pageend }}
+<li><a href="{{ url_for("display_transcription", trans_id = item.id) }}">Page{% if item.pagestart != item.pageend and item.pageend != 0 %}s: {{ item.pagestart }}-{{ item.pageend }}
   {% else %}: {{ item.pagestart }}
   {% endif %}
 </a></li>

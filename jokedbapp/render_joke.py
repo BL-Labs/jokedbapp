@@ -35,7 +35,10 @@ class ICanHaz(object):
     if column_title:
       lines.append(('DEFAULT_SMALL', u"Column Title: '{0}'".format(column_title)))
     lines.append(('DEFAULT_SMALL', u"Date: {0}".format(date)))
-    lines.append(('DEFAULT_SMALL', u"Page(s): {0}".format(page)))
+    if len(page) > 4:
+      lines.append(('DEFAULT_SMALL', u"Pages: {0}".format(page)))
+    else:
+      lines.append(('DEFAULT_SMALL', u"Page: {0}".format(page)))
     if source_attrib:
       lines.append(('DEFAULT_SMALL', u"Attribution: {0}".format(source_attrib)))
     if add_tumblr:

@@ -9,7 +9,7 @@
     <h2>Joke ID {{ j.id | safe }}</h2>
     <div>Work: <a href="{{ url_for("display_work", work_id = j.from_transcription.biblio.id) }}">[{{ j.from_transcription.biblio.id }}] '{{ j.from_transcription.biblio.title[:20] | safe }}...'({{ j.from_transcription.biblio.date | safe}}, {{ j.from_transcription.biblio.itemtype }})</a></div>
     <div>&gt; Transcription: <a href="{{ url_for("display_transcription", trans_id = j.from_transcription.id) }}">[{{ j.from_transcription.id }}] from page
-      {% if j.from_transcription.pagestart != j.from_transcription.pageend %}
+      {% if j.from_transcription.pagestart != j.from_transcription.pageend and j.from_transcription.pageend != 0 %}
     s: {{ j.from_transcription.pagestart }}-{{ j.from_transcription.pageend }}
       {% else %}
     : {{ j.from_transcription.pagestart }}
