@@ -26,7 +26,7 @@ def _render_joke_to_file(j):
   if j != None:
     t = j.from_transcription
     b = t.biblio
-    page = t.pagestart
+    page = unicode(t.pagestart)
     if t.pagestart != t.pageend:
       page = u"{0}-{1}".format(t.pagestart, t.pageend)
 
@@ -42,8 +42,8 @@ def _render_joke_w_jokester_to_file(j):
   if j != None:
     t = j.from_transcription
     b = t.biblio
-    page = t.pagestart
-    if t.pagestart != t.pageend:
+    page = unicode(t.pagestart)
+    if t.pagestart != t.pageend and t.pageend != 0:
       page = u"{0}-{1}".format(t.pagestart, t.pageend)
 
     lines = renderer.markup_text(j.title, j.joketext, j.attribution, "DEFAULT")
